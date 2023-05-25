@@ -96,4 +96,4 @@ public class Problem2 {
 
         /**Override the equals method*/
         public boolean equals(Object parm1) {
-            if ((this.subtract((Rational) (parm1))).getNumerator() == 0)
+            if ((this.subtract((Rational) (parm1))).getNumerator() == 
