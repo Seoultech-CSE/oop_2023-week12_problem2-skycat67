@@ -96,4 +96,41 @@ public class Problem2 {
 
         /**Override the equals method*/
         public boolean equals(Object parm1) {
-            if ((this.subtract((Rational) (parm1))).getNumerator() == 
+            if (!(parm1 instanceof Rational))
+                return false;
+            
+            Rational other = (Rational) parm1;
+            return this.r[0] == other.r[0] && this.r[1] == other.r[1];
+        }
+
+        /**Override the intValue method*/
+        public int intValue() {
+            return (int) doubleValue();
+        }
+
+        /**Override the floatValue method*/
+        public float floatValue() {
+            return (float) doubleValue();
+        }
+
+        /**Override the doubleValue method*/
+        public double doubleValue() {
+            return (double) r[0] / r[1];
+        }
+
+        /**Override the longValue method*/
+        public long longValue() {
+            return (long) doubleValue();
+        }
+
+        @Override
+        public int compareTo(Rational o) {
+            if ((this.subtract(o)).getNumerator() > 0)
+                return 1;
+            else if ((this.subtract(o)).getNumerator() < 0)
+                return -1;
+            else
+                return 0;
+        }
+    }
+}
